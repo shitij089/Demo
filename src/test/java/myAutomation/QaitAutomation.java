@@ -170,5 +170,19 @@ public class QaitAutomation {
 				"Strings are not matching");
 	}
 	
+	@Test (priority = 13)
+	public void fakeJobOffer() {
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		driver.findElement(By.xpath("//a[contains(text(), 'Fake Job Offer – Beware')]")).click();
+		System.out.println("After clicking in Fake Job Offer in Career page...");
+		driver.navigate().to("https://qainfotech.com/beware-of-fake-job-offers.html");
+		Assert.assertEquals("https://qainfotech.com/beware-of-fake-job-offers.html", driver.getCurrentUrl(),
+				"Strings are not matching");
+	}
+	
 	
 }
